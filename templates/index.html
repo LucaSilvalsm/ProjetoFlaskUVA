@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/static/css/login.css">
+  <link rel="stylesheet" href="/static/css/newhamburguer.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+{% endblock %}
+
+{% block content %}
+  <div class="msg-container">
+    {% if get_flashed_messages(with_categories=true) %}
+      <div class="alert-messages">
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <p>Conteúdo da página inicial aqui.</p>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <!-- Scripts específicos da página inicial, se necessário -->
+{% endblock %}
