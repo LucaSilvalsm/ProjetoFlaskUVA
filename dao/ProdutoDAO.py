@@ -25,8 +25,8 @@ class ProdutoDAO:
         ))
         self.session.commit()
     
-    def excluir(self, chave):
-        produto = self.session.get(Produto, chave)
+    def excluir(self, id):
+        produto = self.session.get(Produto, id)
         if produto:
             self.session.delete(produto)
             self.session.commit()
@@ -47,6 +47,15 @@ class ProdutoDAO:
     def image_generate_name(self):
         return secrets.token_hex(60) + ".jpg"
     
+    def todas_categorias(self):
+        categorias = ["Artesanal", "Tradicional", "Bebida", "Porção", "Sobremesa"]
+        produtos_por_categoria = {}
+
+        for categoria in categorias:
+            produtos_categoria = self.tipo_produto(categoria)
+            produtos_por_categoria[categoria] = produtos_categoria
+
+        return produtos_por_categoria
     def close(self):
         self.session.close()
 

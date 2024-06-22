@@ -21,7 +21,7 @@ def register():
         confirmacaoSenha = request.form.get('confirmacaoSenha')
         telefone = request.form.get('telefone')
         endereco = request.form.get('endereco')
-        numeroCasa = request.form.get('numeroCasa')
+        numero_casa = request.form.get('numero_casa')
         complemento = request.form.get('complemento')
         bairro = request.form.get('bairro')
 
@@ -49,7 +49,7 @@ def register():
             telefone=telefone,
             endereco=endereco,
             tipo_usuario = 'Cliente',
-            numero_casa=numeroCasa,
+            numero_casa=numero_casa,
             complemento=complemento,
             bairro=bairro
         )

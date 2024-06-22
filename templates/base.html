@@ -6,16 +6,22 @@
   <title>{% block title %}Hamburgueria{% endblock %}</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css" integrity="sha512-drnvWxqfgcU6sLzAJttJv7LKdjWn0nxWCSbEAtxJ/YYaZMyoNLovG7lPqZRdhgL1gAUfa+V7tbin8y+2llC1cw==" crossorigin="anonymous" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  <!-- Boxicons -->
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <!-- CSS do projeto -->
-  {% block styles %}
-  <link rel="stylesheet" href="/static/css/login.css">
-  <link rel="stylesheet" href="/static/css/newhamburguer.css">
-  <link rel="stylesheet" href="/static/css/styles.css">
-  {% endblock %}
+
+  <link rel="stylesheet" href="/static/CSS/newhamburguer.css">  
+ 
+   <link rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+   <!-- or -->
+   <link rel="stylesheet"
+   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+   <!-- CSS do projeto -->
+ 
+   
+   
+   <link rel="stylesheet" href="/static/CSS/styles.css">
+   <link rel="stylesheet" href="/static/CSS/login.css">
 </head>
 <body>
   <header>
@@ -43,7 +49,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/cesta" class="nav-link">
               <i class='bx bx-basket'></i> Carrinho
             </a>
           </li>
@@ -65,7 +71,7 @@
     </nav>
   </header>
 
-  <div class=""> <!--Se colocar Container o login fica quebrado-->
+  <div class="container"> <!-- Use 'container' ou 'container-fluid' conforme o layout desejado -->
     {% block content %}
     {% endblock %}
   </div>
@@ -139,8 +145,4 @@
 
   <!-- Bootstrap JS e outros scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.js" integrity="sha512-KCgUnRzizZDFYoNEYmnqlo0PRE6rQkek9dE/oyIiCExStQ72O7GwIFfmPdkzk4OvZ/sbHKSLVeR4Gl3s7s679g==" crossorigin="anonymous"></script>
-  {% block scripts %}
-  {% endblock %}
-</body>
-</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitt

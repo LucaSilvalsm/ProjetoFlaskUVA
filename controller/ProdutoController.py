@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, request, redirect, url_for, flash
+from flask import Flask, Blueprint, request, redirect, url_for, flash, render_template
 from werkzeug.utils import secure_filename
 import os
 from Model.Produtos import Produto
@@ -65,6 +65,27 @@ def register():
 
     # Redirecionar para a página de adição de produto em caso de erro
     return redirect(url_for('page_bp.produto'))
+
+@produto_bp.route('/delete', methods=['POST'])
+def delete():
+    if request.method == 'POST':
+        produto_id = request.form['id']
+
+        # Verificar se o produto existe antes de excluir
+        produto = produtoDao.obter(produto_id)
+        if produto:
+            try:
+                produtoDao.excluir(produto_id)
+                flash(f'Produto ID {produto_id} excluído com sucesso!', 'success')
+            except Exception as e:
+                flash(f'Erro ao excluir produto: {str(e)}', 'error')
+        else:
+            flash(f'Produto ID {produto_id} não encontrado para exclusão', 'error')
+
+        return redirect(url_for('page_bp.all_produtos'))
+
+    # Redirecionar para a página de produtos em caso de erro
+    return redirect(url_for('page_bp.all_produtos'))
 
 def allowed_file(filename):
     return '.' in filename and \

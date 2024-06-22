@@ -81,7 +81,7 @@ def login():
 def dashboard():
     # Verificar se o usuário é administrador
     if 'tipo_usuario' in session and session['tipo_usuario'] == 'Administrador':
-        return render_template('/admin/base.html')
+        return render_template('/admin/painel.html')
     else:
         flash('Acesso negado.', 'error')
         return redirect(url_for('admin_bp.login'))

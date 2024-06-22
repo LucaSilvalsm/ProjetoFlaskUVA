@@ -5,17 +5,16 @@ from .SQLCreate import engine
 Base = declarative_base()
 
 class Produto(Base):
-    __tablename__ = "produtos"  # Nome da tabela no banco de dados
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    nome_produto = Column(String(30), nullable=False)
-    tipo_produto = Column(String(30), nullable=False)
-    tamanho = Column(String(50))
-    ingrediente = Column(String(50))
-    preco = Column(DECIMAL(10, 2), nullable=False)  # DECIMAL(10, 2) para até 10 dígitos, 2 deles após o ponto decimal
+    __tablename__ = "produtos"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome_produto = Column(String(200), nullable=False)
+    tipo_produto = Column(String(200), nullable=False)
+    tamanho = Column(String(200))
+    ingrediente = Column(String(200))
+    preco = Column(DECIMAL(10, 2), nullable=False)
     descricao = Column(Text)
-    imagem = Column(String(50), nullable=False)
-
+    imagem = Column(String(250), nullable=False)
+    
     def __repr__(self):
         return (
             f"<Produto(id={self.id}, "
