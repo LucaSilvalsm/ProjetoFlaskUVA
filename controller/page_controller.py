@@ -24,21 +24,24 @@ def cadastro_admin():
 
 @page_bp.route("/produto")
 def produto():
-    print("Acessando a rota /login")
+    print("Acessando a rota /produto")
     return render_template('./admin/newproduto.html')
 
+@page_bp.route("/painel")
+def painel():
+    print("Acessando a rota /painel")
+    return render_template('./admin/painel.html')
 
 @page_bp.route("/admin_login")
 def admin_login():
-    print("Acessando a rota /login_admin")
+    print("Acessando a rota /admin_login")
     return render_template('login_adm.html')
-
 
 @page_bp.route("/admin_register")
 def admin_register():
     print("Acessando a rota /admin_register")
     return redirect(url_for('admin_bp.register'))  # Redirecione para admin_bp.register
+
 @page_bp.route('/dashboard')
 def dashboard():
     return render_template('/admin/base.html')
-

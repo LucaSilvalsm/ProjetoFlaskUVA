@@ -11,12 +11,9 @@ class UsuarioDAO:
     def incluir(self, usuario):
         session.add(usuario)
         session.commit()
-
     def obter(self, id):
         return session.query(Usuario).filter_by(id=id).first()
-    def obter_por_email(self, email):
-        # Lógica para buscar um usuário pelo email no banco de dados
-        # Exemplo hipotético:
+    def obter_por_email(self, email):        
         usuario = session.query(Usuario).filter_by(email=email).first()
         return usuario if usuario else None
     def obter_por_telefone(self, telefone):

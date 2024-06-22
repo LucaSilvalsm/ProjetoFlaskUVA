@@ -3,16 +3,6 @@ body {
   background-color: #f4f4f4;
 }
 
-.form-container {
-  max-width: 1300px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: rgba(222, 184, 135, 0.733);
-  border-radius: 2px solid black; 
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-}
 
 
 .form-right, .form-left {
